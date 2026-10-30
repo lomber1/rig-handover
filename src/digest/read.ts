@@ -7,7 +7,7 @@ type Entry = { at: string; job: string; status: Status; owner: string | null; er
 const NIGHT = /^\d{4}-\d{2}-\d{2}$/;
 const STATUSES: readonly string[] = ['ok', 'retry', 'fail'] satisfies Status[];
 
-function parseEntry(line: string): Entry | null {
+export function parseEntry(line: string): Entry | null {
   let value: unknown;
   try {
     value = JSON.parse(line);
